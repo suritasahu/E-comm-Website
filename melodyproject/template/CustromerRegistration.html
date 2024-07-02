@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Registration{% endblock title %} 
+{% block banner_slider %} 
+<div class="container-fluid bg-dark d-flex justify-content-around align-items-center " >
+    <video src="{% static 'image/banner/30195143.mp4' %}" autoplay loop muted height="200"></video>
+    <video src="{% static 'image/banner/pd3.mp4' %}" autoplay loop muted height="200"></video>
+    <video src="{% static 'image/banner/30195143.mp4' %}" autoplay loop muted height="200"></video>
+    <video src="{% static 'image/banner/regivid.mp4' %}" autoplay loop muted height="200"></video>
+</div>
+{% endblock banner_slider %}
+
+
+{% block main-content %} 
+    <div class="container-fluid bg-dark">
+        <div class="row my-2">
+            <div class="col-sm-6 offset-sm-3">
+                <h3 style="text-align: center; color: white;">Customer Registration</h3>
+                <p style="text-align: center; color: white;">Wellcome To Registration page!!</p>
+                <hr style="color: white;">
+                <form action="" method="post" novalidate class="shadow-lg p-5" >
+                    {% csrf_token %}
+                    {% for fm in form %}
+                         <label style="color: white;">{{fm.label_tag}}</label> {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small><br>
+                    {% endfor %}
+                    <input type="submit" value="submit" class="btn btn-outline-primary"><br>
+
+                    <div class="text-center text-primary fw-bold">
+                        <small>Existing User ?<a href="{% url 'login' %}" class="text-danger">Login Now</a></small>
+                    </div>
+                
+
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                            <p class="alert alert-danger my-3">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <div class="alert alert-{{msg.tags}}" role="alert">
+                                {{msg}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </form>    
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock main-content %} 

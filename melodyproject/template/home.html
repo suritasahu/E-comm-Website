@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %} 
+
+
+{% block banner_slider %}
+<!--Banner Slider-->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="{% static 'image/banner/b2.png' %}" class="d-block w-100" alt="..." height="400">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'image/banner/b3.png' %}" class="d-block w-100" alt="..." height="400"> 
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'image/banner/b4.png' %}" class="d-block w-100" alt="..." height="400"> 
+      </div>
+      <!-- <div class="carousel-item active">
+        <img src="{% static 'image/banner/b5.png' %}" class="d-block w-100" alt="..." height="400"> 
+      </div> -->
+    </div>
+  </div>
+  
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+{% block main-content %} 
+            <h2 class="text-center bg-dark mt-1" style="color: white;">Welcome to Melody</h2>
+            <div class="container-fluid bg-dark">
+              <div class="row justify-content-center bg-dark">
+                  <div class="col-md-3 col-sm-4">
+                      <div class="good text-center">
+                        <a href="{% url 'category' 'wu' %}" style="text-decoration: none;">
+                          <img src="{% static 'image/banner/ww.jpg' %}" class="img-responsive" alt="" style="width: 300px; height: 300px; border: none;">
+                          <p class="tshirt" style="color: white;">Women's Tops</p>
+                        </a> 
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                      <div class="good text-center">
+                        <a href="{% url 'category' 'wb' %}" style="text-decoration: none;">
+                          <img src="{% static 'image/banner/wb1.jpg' %}" class="img-responsive" alt="" style="width: 300px; height: 300px; border: none;">
+                          <p class="tshirt" style="color: white;">Women's Jeans</p>
+                        </a>  
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                    <div class="good text-center">
+                      <a href="{% url 'category' 'mu' %}" style="text-decoration: none;">
+                        <img src="{% static 'image/banner/fia.jpg' %}" class="img-responsive" alt="" style="width: 300px; height: 300px; border: none;">
+                        <p class="tshirt" style="color: white;">Men's T-shirt</p>
+                      </a>  
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                  <div class="good text-center">
+                    <a href="{% url 'category' 'mb' %}" style="text-decoration: none;">
+                      <img src="{% static 'image/banner/bj.jpg' %}" class="img-responsive" alt="" style="width: 300px; height: 300px; border: none;">
+                      <p class="tshirt" style="color: white;">Men's Jeans</p>
+                    </a>  
+                  </div>
+              </div>
+                 
+              </div>
+          </div>
+                     
+{% endblock main-content %}

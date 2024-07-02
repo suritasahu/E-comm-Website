@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Search Result{% endblock title %}
+
+{% block main-content %}
+{% comment %} <div class="container my-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                {% if products %}
+                    {% for product in products %}
+                        <div class="col-sm-4 text-center mb-4">
+                            <a href="{% url 'product-details' product.id %}" class="btn">
+                                <div class="">
+                                    <img src="{{ product.product_image.url }}" alt="{{ product.title }}" width="300px" height="200px" class="img-fluid" />
+                                    <div class="fw-bold">{{ product.title }}</div>
+                                    <div class="fw-bold text-danger">
+                                        Rs.{{ product.discounted_price }}/-
+                                        <small class="fw-light text-decoration-line-through">{{ product.selling_price }}</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="content-404">
+                        <h1 class="text-center"><b>OPPS?</b> We Couldn't Find This Page</h1>
+                        <h2 class="text-center"><a href="/">Bring me back to Home</a></h2>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+    <h1>Search Results for "{{ query }}"</h1>
+    <p>Total items in cart: {{ totalitem }}</p>
+    <ul>
+        {% for item in product %}
+            <img src="{{item.product_image.url}}" height="200px" width="300px" alt="">
+            <li>{{ item.title }}</li>
+         {% empty %}
+            <li>No products found.</li>
+        {% endfor %}
+    </ul>
+{% endblock main-content %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block banner_slider %}
+<!--Banner Slider-->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+        <div class="carousel-item">
+            <img src="{% static 'image/banner/b2.png' %}" class="d-block w-100" alt="..." height="400">
+        </div>
+        <div class="carousel-item active">
+            <img src="{% static 'image/banner/b3.png' %}" class="d-block w-100" alt="..." height="400">
+        </div>
+        <div class="carousel-item active">
+            <img src="{% static 'image/banner/b4.png' %}" class="d-block w-100" alt="..." height="400">
+        </div>
+        <!-- <div class="carousel-item active">
+        <img src="{% static 'image/banner/b5.png' %}" class="d-block w-100" alt="..." height="400"> 
+      </div> -->
+    </div>
+</div>
+
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+{% block main-content %}
+
+<div class="container bg-dark">
+    <p style="color: white;">Indian clothing and apparel industry is one of the largest employment generating sector after agriculture in
+        India and is sixth largest exporter in the world. India is the second largest producer of fibre in the world.
+        Cotton is the most produced fibre in India. Other fibres produced in India include silk, wool, and jute. 60% of
+        the Indian textile Industry is cotton based. Indian clothing industry dates back to Harappan civilisation and is
+        one of the oldest clothing manufacturing industry in the world. India produces various types of clothing
+        including woven and knitted clothing. Mumbai, Surat, Tiruppur,Ahmedabad , Bangalore, Delhi, Ludhiana and Chennai
+        are important manufacturing centres of India.</p>
+</div>
+
+{% endblock main-content %}

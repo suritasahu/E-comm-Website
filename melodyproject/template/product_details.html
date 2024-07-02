@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}productdetails{% endblock title %} 
+{% block banner_slider %} 
+<!--Banner Slider-->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'image/banner/mark.jpg' %}" class="d-block w-100" alt="..." height="400"> 
+      </div>
+      <!-- <div class="carousel-item active">
+        <img src="{% static 'image/banner/b5.png' %}" class="d-block w-100" alt="..." height="400"> 
+      </div> -->
+    </div>
+  </div>
+  
+</div>
+<!-- End Banner Slider -->
+
+{% endblock banner_slider %}
+
+
+
+{% block main-content %} 
+    <div class="container">
+        <div class="row flex justify-content-between">
+            <div class="img2 col-lg-5" style="height: 500px;">
+                <img src="{{product.product_image.url}}" style="border: 2px solid black;"  class="image col-xs-6 col-sm-12 col-lg-12 mt-1 text-sm-center w-100 h-75 " alt="">
+            </div>
+            <div class="productdetails col-lg-5 my-1 bg-dark " style="height: 500px;">
+                <h1 style="font-family: Georgia; font-size: 37px;color: white;">{{product.title}}</h1>
+                <p style="color: white;">
+                    Product details
+                    <ol type="square">
+                        <li style="color: white;">{{product.description}}</li>
+                        <li style="color: white;">Material composition60% Cotton, 40% Polyester</li>
+                        <li style="color: white;">Fit typeRegular Fit</li>
+                        <li style="color: white;">Sleeve typeShort Sleeve</li>
+                        <li style="color: white;">Collar styleClassic Collar</li>
+                        <li style="color: white;">LengthStandard Length</li>
+                        <li style="color: white;">Country of OriginIndia</li>
+                    </ol>
+                </p>
+                <hr>
+                <h2 style="color: white;" class="text-center">Discounted-Price: Rs.{{product.discounted_price}}/-</h2>
+                <div style="text-align: center;">
+                    <small style="color: red;" class="fw-light text-decoration-line-through">Original-Price:{{product.selling_price}}</small>
+                </div>
+                <form action="/add-to-cart" class="d-inline">
+                        <input type="hidden" name="prod_id" value="{{product.id}}"/>
+                        <div style="display: flex; justify-content: center;">
+                            <button type="submit" class="btn btn-danger shadow px-5 py-2" style="border-radius: 50px;">
+                                     Add to Cart
+                            </button>
+                        </div>
+                </form>    
+                
+                
+            </div>
+        </div>
+    </div>
+{% endblock main-content %} 
