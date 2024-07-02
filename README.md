@@ -1,2 +1,2 @@
-# ITFinalDjango
+# E-Commerce Website
  
